@@ -1,8 +1,8 @@
-# Detect Stopped vehicles In Video
+# Count Number Of Vehicles Exiting and Entering an Intersection
 
 Hi my name is `Moses Daudu` and I am a Machine Learning Engineer.
 
-In this repo, You will see how to detect vehicles that stopped in a given video.
+In this repo, You will see how I counted different vehicles at two seperate locations
 
 ## Step 1:
 Install all requirements

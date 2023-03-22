@@ -2,7 +2,6 @@ from ultralytics import YOLO
 import cv2
 import cvzone
 import math
-import argparse
 from sort import *
 
 FILE_PATH = "C:/Users/itani/Downloads/roi/GitHub_Projects/Traffic_Count/Videos/10fps.mp4" 
