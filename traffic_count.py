@@ -30,6 +30,7 @@ limitsDown = [335, 649, 592, 492]
 
 totalCountUp = []
 totalCountDown = []
+current_frame = 0
 
 while True:
     _, img = cap.read()
@@ -66,6 +67,7 @@ while True:
     cv2.line(img, (limitsDown[0], limitsDown[1]), (limitsDown[2], limitsDown[3]), (0, 0, 255), 5)   
 
     for res in resultTracker:
+        current_frame+=1
         x1,y1,x2,y2,id = res
         x1,y1,x2,y2, id = int(x1), int(y1), int(x2), int(y2), int(id)
         w,h = x2-x1, y2-y1
@@ -80,6 +82,9 @@ while True:
             if totalCountUp.count(id) == 0:
                 totalCountUp.append(id)
                 cv2.line(img, (limitsUp[0], limitsUp[1]), (limitsUp[2], limitsUp[3]), (0, 255, 0), 5)
+                cv2.putText(img,'Exit:' + str(len(totalCountUp)),(929,345),cv2.FONT_HERSHEY_PLAIN,5,(139,195,75),7)
+                cv2.putText(img,'Entry:' + str(len(totalCountDown)),(929,145),cv2.FONT_HERSHEY_PLAIN,5,(50,50,230),7)
+                cv2.imwrite('C:/Users/itani/Downloads/roi/GitHub_Projects/Image_Capturer_From_Video/Traffic_Offenders/vehicle@' +str(current_frame) + '.jpg', img)
 
         if limitsDown[0] < cx < limitsDown[2] and limitsDown[3] < cy < limitsDown[1]:
             if totalCountDown.count(id) == 0:

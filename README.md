@@ -1,6 +1,6 @@
 # Count Number Of Vehicles Exiting and Entering an Intersection
 
-Hi my name is `Moses Daudu` and I am a Machine Learning Engineer.
+Hi my name is `Moses Daudu`
 
 In this repo, You will see how I counted different vehicles at two seperate locations
 
