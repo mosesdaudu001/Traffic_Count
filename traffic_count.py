@@ -4,7 +4,7 @@ import cvzone
 import math
 from sort import *
 
-FILE_PATH = "C:/Users/itani/Downloads/roi/GitHub_Projects/Traffic_Count/Videos/10fps.mp4" 
+FILE_PATH = "Videos/10fps.mp4" 
 classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat",
               "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat",
               "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella",
@@ -17,12 +17,12 @@ classNames = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "trai
               "teddy bear", "hair drier", "toothbrush"
               ]
 # For Mask
-mask = cv2.imread('C:/Users/itani/Downloads/roi/GitHub_Projects/Traffic_Count/masks/10dtp_1.png')
+mask = cv2.imread('masks/10dtp_1.png')
 
 # For Tracker
 tracker = Sort(max_age=200, min_hits=3, iou_threshold=0.3)
 cap  = cv2.VideoCapture(FILE_PATH)
-model = YOLO("C:/Users/itani/Downloads/roi/GitHub_Projects/Traffic_Count/yolo_weights/yolov8n.pt")
+model = YOLO("yolo_weights/yolov8n.pt")
 
 # Initialize the coordinates for line which is specific for the video
 limitsUp = [834, 260, 837, 442]
